@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Centro de Datos Didácticos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <div class="brand">Mini Centro</div>
+      <nav class="main-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#semanas">Semanas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">Modo</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Mini Centro de Datos Didácticos</h1>
+          <p class="lead">Recursos, prácticas y guías paso a paso para aprender ciencias de datos de forma didáctica.</p>
+          <p><a class="btn" href="#semanas">Ver semanas</a></p>
+        </div>
+        <div class="hero-media">
+          <img src="assets\hero1.jpg" alt="Mini Centro image">
+        </div>
+      </div>
+    </section>
+
+    <section id="semanas" class="section">
+      <div class="container">
+        <h2>Semanas</h2>
+        <p class="muted">Explora las actividades y materiales por semana.</p>
+        <div class="grid">
+          <article class="card">
+            <img src="assets\card1.jpg" alt="Semana 1">
+            <div class="card-body">
+              <h3><a href="semana-1.html">Semana 1</a></h3>
+              <p>Introducción y material inicial para comenzar con datos didácticos.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets\card2.jpg" alt="Semana 2">
+            <div class="card-body">
+              <h3><a href="semana-2.html">Semana 2</a></h3>
+              <p>Ejercicios prácticos y ejemplos para afianzar conceptos.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets\card3.jpg" alt="Semana 3 y 4">
+            <div class="card-body">
+              <h3><a href="semana-3.html">Semana 3 y 4</a></h3>
+              <p>Proyectos y prácticas más avanzadas.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/placeholder-card.svg" alt="Semana 5">
+            <div class="card-body">
+              <h3><a href="semana-5.html">Semana 5</a></h3>
+              <p>Material complementario y conclusiones.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section small">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p class="muted">Si quieres adaptar o publicar este sitio, puedo ayudarte con el diseño y despliegue.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Mini Centro de Datos Didácticos</p>
+    </div>
+  </footer>
+</body>
+<script>
+  (function(){
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if(saved==='dark') root.setAttribute('data-theme','dark');
+    toggle.addEventListener('click', ()=>{
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if(isDark){
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme','light');
+      } else {
+        root.setAttribute('data-theme','dark');
+        localStorage.setItem('theme','dark');
+      }
+    });
+  })();
+</script>
+</html>
